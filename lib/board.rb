@@ -20,12 +20,8 @@ class Board
     @hash_board = {"A1"=>" -","A2"=>" -","A3"=>" -","B1"=>" -","B2"=>" -","B3"=>" -","C1"=>" -","C2"=>" -","C3"=>" -"}
   end
 
-  def check_board(new_position)
-    
-  end
-
-  def change_board(player,sign,new_position)
-    
+  def change_board(player,new_position)
+    @hash_board["#{new_position}"] = player.sign
   end
 end
 # End of Board ...............................................................

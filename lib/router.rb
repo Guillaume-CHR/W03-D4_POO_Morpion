@@ -38,14 +38,28 @@ class Router
 
 	  while new_game.upcase == "Y"
 		@controller.new_game
+
+		winner = false
 		puts ""
-		while @controller.game_round <9
-		  @controller.play_game
+		while @controller.game_round <=9 and winner == false 
+		  player = @controller.play_game
+		  winner = true if player.is_winner
 		end
-		puts "Do you wish to play a new game?"
+		system("clear")
+		puts "*"*80
+	  	if winner == true 
+	  	  puts "\n Congratulations #{player.name}!! You WON!!\n"
+	  	else
+	  	  puts "\n GAME OVER - No one won \n"
+	  	end
+	  	puts "*"*80
+		puts "\n\nDo you wish to play a new game?"
 		print "     Enter  [y]es or [n]o > "
 		new_game = gets.chomp.to_s
+		@controller.restart
+		system("clear")
 	  end
+
 	end
     puts ""
     puts "*"*80

@@ -24,28 +24,25 @@ class View
     return [player_one, player_two].to_a
   end
 
-  def round(player,array_cases)
-  	puts "Damn it #{player.name}, that's your turn."
-  	puts "(Your sign is #{player.sign})"
+  def round(player,hash_board)
+  	puts "          Damn it #{player.name}, that's your turn."
+  	puts "          (Your sign is #{player.sign})"
   	while true
-  	  print "     Select the case you want to play (format A1) > "
+  	  print "          Select the case you want to play (format A1) > "
       case_played = gets.chomp.to_s
-      binding.pry
-      if array_cases["#{case_played.upcase}"] == " -"
+      if hash_board["#{case_played.upcase}"] == " -"
       	return case_played
-      elsif array_cases["#{case_played.upcase}"] != " -"
-      	puts "Wrong choice!!! The case is not empty"
       else
-      	puts "Wrong choice!!! The format is KO"
+      	puts "          Wrong choice!!!\n"
       end
     end
   end
 
-  def display_board(hash_board, turn, game_round, sign)
+  def display_board(hash_board, player, game_round)
 
 	puts "*"*80
 	puts "    Round | #{game_round}"
-	puts "    Turn  | #{turn} (use sign #{sign})"
+	puts "    Turn  | #{player.name} (use sign #{player.sign})"
 	puts "*"*80
 	puts "Here is the ongoing board:
 
