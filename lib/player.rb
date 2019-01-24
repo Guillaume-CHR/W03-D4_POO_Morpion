@@ -15,9 +15,6 @@
 #           - sign (emoji (gem gemoji) X or O)
 # 		- Change turn of player (def change turn)
 #     - Check if player is winner and update cells used by user (ex A1 ==> X)
-#		
-#	Links:
-		#require './lib/controller'
 #
 #****************************************************************************
 class Player

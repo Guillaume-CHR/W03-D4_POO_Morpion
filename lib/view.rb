@@ -1,3 +1,18 @@
+#! /usr/bin/env ruby
+##****************************************************************************
+# RUBY - TIC TAC TOE
+#****************************************************************************
+#   Ruby's Program - View
+#   Written by: Guillaume CHRISTE
+#   Date: 24-Jan-2019
+#   
+#   Description:
+#     - Display rules
+#     - Ask user to enter their names
+#     - Ask user to select an input and check if valid
+#     - Display board
+#
+#****************************************************************************
 class View
   #Display rules
   def display_rules
@@ -62,3 +77,6 @@ class View
 	".colorize(:light_blue)
   end
 end
+# End of View ................................................................
+#.............................................................................
+#.............................................................................

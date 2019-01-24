@@ -8,9 +8,6 @@
 #   
 #   Description: 
 # 		- Increment game round (not useful really...)
-#		
-#	Links:
-		#require './lib/router'
 #
 #****************************************************************************
 class Game

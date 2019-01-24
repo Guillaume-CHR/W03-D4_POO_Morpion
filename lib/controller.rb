@@ -11,11 +11,11 @@
 # 		- Display rules
 #     - Play the game (def play_game)
 #		
-#	Links:
-		require './lib/view'
-		require './lib/player'
-		require './lib/game'
-		require './lib/board'
+#	  Links:
+		  require './lib/view'
+		  require './lib/player'
+		  require './lib/game'
+		  require './lib/board'
 #
 #****************************************************************************
 class Controller
@@ -101,7 +101,6 @@ class Controller
   end
 
 end
-
 # End of Controller ..........................................................
 #.............................................................................
 #.............................................................................
