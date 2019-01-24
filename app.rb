@@ -8,7 +8,7 @@
 #   
 #   Description:
 # 		- Program to simulate a Tic Tac Toe game
-# 		- 
+# 		- It uses the MVC method ... or tries to ...
 # 		
 # 	Gems:
 		require 'bundler'

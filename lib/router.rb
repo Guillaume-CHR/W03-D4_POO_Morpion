@@ -33,7 +33,6 @@ class Router
 
 	if start_game.upcase == "Y"
 	  new_game = "Y"
-	  @controller.new_game
 	  @controller.create_players
 
 	  while new_game.upcase == "Y"
