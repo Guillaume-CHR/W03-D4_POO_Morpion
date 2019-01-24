@@ -6,20 +6,18 @@
 #   Written by: Guillaume CHRISTE
 # 	Date: 24-Jan-2019
 #   
-#   Description:
-# 		- 
-# 		- 
+#   Description: 
+# 		- Increment game round (not useful really...)
 #		
 #	Links:
 		#require './lib/router'
 #
 #****************************************************************************
 class Game
-  attr_accessor :round, :winning
+  attr_accessor :round
 
   def initialize
     @round = 1
-    @winning =[["A1","A2","A3"],["B1","B2","B3"],["C1","C2","C3"],["A1","B1","C1"],["A2","B2","C2"],["A3","B3","C3"],["A1","B2","C3"],["A3","B2","C1"]]
   end
 
   def new_round

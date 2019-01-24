@@ -7,8 +7,8 @@
 # 	Date: 24-Jan-2019
 #   
 #   Description:
-# 		- 
-# 		- 
+# 		- Initiate board: each cell is set to empty (= " -")
+# 		- Change the board with user input (from class View via Controller)
 #		
 #	Links:
 #		require './lib/controller'
