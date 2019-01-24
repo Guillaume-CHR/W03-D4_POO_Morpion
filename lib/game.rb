@@ -2,7 +2,7 @@
 ##****************************************************************************
 # RUBY - TIC TAC TOE
 #****************************************************************************
-#   Ruby's Program - Board & Cell
+#   Ruby's Program - Game
 #   Written by: Guillaume CHRISTE
 # 	Date: 24-Jan-2019
 #   
@@ -11,23 +11,26 @@
 # 		- 
 #		
 #	Links:
-#		require './lib/controller'
+		#require './lib/router'
 #
 #****************************************************************************
-class Board
-  attr_accessor :hash_board
+class Game
+  attr_accessor :status, :round
+
   def initialize
-    @hash_board = {A1: " -",A2: " -",A3: " -",B1: " -",B2: " -",B3: " -",C1: " -",C2: " -",C3: " -"}
+    @status = true
+    @round = 0
   end
 
-  def check_board(new_position)
-    
+  def new_round
+  	@round +=1
   end
 
-  def change_board(player,sign,new_position)
-    
+  def end_game?
+
   end
 end
-# End of Board ...............................................................
+
+# End of Game ...............................................................
 #.............................................................................
 #.............................................................................

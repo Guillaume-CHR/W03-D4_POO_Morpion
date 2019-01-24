@@ -33,15 +33,20 @@ class Router
 
 	if start_game.upcase == "Y"
 	  new_game = "Y"
-	  @controller.create_players
+	  while @controller.game_status
+		
+		@controller.create_players
 
-	  while new_game.upcase == "Y"
-	    @controller.display_board
-	    puts ""
-		puts "Do you wish to play a new game?"
-		print "     Enter  [y]es or [n]o > "
-		new_game = gets.chomp.to_s
-      end
+		while new_game.upcase == "Y"
+		  puts ""
+
+		  @controller.start_game
+
+		  puts "Do you wish to play a new game?"
+		  print "     Enter  [y]es or [n]o > "
+		  new_game = gets.chomp.to_s
+	    end
+	  end
 	end
     puts ""
     puts "*"*80
