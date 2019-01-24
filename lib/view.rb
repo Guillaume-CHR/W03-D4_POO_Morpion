@@ -30,7 +30,7 @@ class View
   	puts "          (Your sign is #{player.sign})".colorize(:green)
   	while true
   	  print "          Select the case you want to play (format A1) > ".colorize(:green)
-      case_played = gets.chomp.to_s
+      case_played = (gets.chomp.to_s).upcase
       if hash_board["#{case_played.upcase}"] == " -"
       	return case_played
       else
