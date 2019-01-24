@@ -14,12 +14,17 @@
 		require './lib/view'
 		require './lib/player'
 		require './lib/game'
+		require './lib/board'
 #
-#****************************************************************************
 #****************************************************************************
 class Controller
   def initialize
     @view =  View.new
+  end
+  
+  def new_game
+    @board = Board.new
+    @game = Game.new
   end
 
   def display_rules
@@ -32,25 +37,24 @@ class Controller
     @player_two = Player.new(players[1])
   end
 
-  def start_game
-  	hash_board =  
-  	array_position = (Player.display_board)
+  def play_game
+  	(@player_one.your_turn == true) ? (player = @player_one) : (player = @player_two)
+  	array_cases = @board.hash_board
+  	new_position = @view.round(player,array_cases)
+
+
+  	new_position =
+  	hash_board = @board.hash_board
   	
 
-  	if @player_one.your_turn == true
-  	  turn = @player_one.name
-  	  sign = @player_one.sign
-  	else
-  	  turn = @player_two.name
-  	  sign = @player_two.sign
-  	end
-  	game_round = Game.new.new_round
-  	@view.display_board(array_position, turn, game_round, sign)
+  	game_round = @game.new_round
+  	@view.display_board(hash_board, turn, game_round, sign)
   end
-
+  def game_round
+  	@game.round
+  end
   def game_status
-    game = Game.new
-    return game.status
+    @game.status
   end
 end
 

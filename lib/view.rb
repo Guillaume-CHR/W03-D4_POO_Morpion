@@ -20,11 +20,28 @@ class View
     player_two = gets.chomp.to_s
 
     puts "\n\nWelcome #{player_one}. Welcome #{player_two}."
-    puts "The game is about to begin, #{player_one} if first to play"
+    puts "The game is about to begin, #{player_one} is first to play"
     return [player_one, player_two].to_a
   end
 
-  def display_board(array_position, turn, game_round, sign)
+  def round(player,array_cases)
+  	puts "Damn it #{player.name}, that's your turn."
+  	puts "(Your sign is #{player.sign})"
+  	while true
+  	  print "     Select the case you want to play (format A1) > "
+      case_played = gets.chomp.to_s
+      binding.pry
+      if array_cases["#{case_played.upcase}"] == " -"
+      	return case_played
+      elsif array_cases["#{case_played.upcase}"] != " -"
+      	puts "Wrong choice!!! The case is not empty"
+      else
+      	puts "Wrong choice!!! The format is KO"
+      end
+    end
+  end
+
+  def display_board(hash_board, turn, game_round, sign)
 
 	puts "*"*80
 	puts "    Round | #{game_round}"
@@ -35,13 +52,13 @@ class View
 	     1     2     3
 	   _________________
 	  |     |     |     |
-	A | #{has_board[:A1]}  | #{has_board[:A2]}  | #{has_board[:A3]}  |
+	A | #{hash_board["A1"]}  | #{hash_board["A2"]}  | #{hash_board["A3"]}  |
 	  |_____|_____|_____|
 	  |     |     |     |
-	B | #{has_board[:B1]}  | #{has_board[:B2]}  | #{has_board[:B3]}  |
+	B | #{hash_board["B1"]}  | #{hash_board["B2"]}  | #{hash_board["B3"]}  |
 	  |_____|_____|_____|
 	  |     |     |     |
-	C | #{has_board[:C1]}  | #{has_board[:C2]}  | #{has_board[:C3]}  |
+	C | #{hash_board["C1"]}  | #{hash_board["C2"]}  | #{hash_board["C3"]}  |
 	  |_____|_____|_____|
 	"
   end
